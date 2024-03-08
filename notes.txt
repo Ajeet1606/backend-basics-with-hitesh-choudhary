@@ -1,0 +1,23 @@
+two import methods in JS:
+- import x from y: ES module method: mostly asynchronous data import
+- const express = require('express'): common js method: mostly synchronous data import
+
+npm project is by default configured to common js, so to use ES module method, we've to specify it in package.json: "type": "module" in root object.
+
+Standard Practices:
+1. Defining endpoints:
+    - /jokes : wrong
+    - /api/v1/jokes or /api/jokes : right
+
+2. Proxy
+    - axios.get('http://localhost:5000/api/jokes') : using url every time is not right way.
+    - axios.get('/api/jokes') : only define endpoints, use proxy, it gives independence in terms of url.
+        - to do that, we add proxy in our app, different ways to do in CRA, vite and all.
+        - for vite: in vite.config we add server configuration.
+
+---------------------------------------- LECTURE 4: DATA MODELLING FOR MONGO DB --------------
+- tools for building DB models: moon modeller, eraser io
+- model is a representation of data structures or entities that your application works with.
+
+points to remember:
+- focus on understanding on what data do we need to store first of all, then only go to building it, one field changes and you've to change your whole model.
