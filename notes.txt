@@ -21,3 +21,33 @@ Standard Practices:
 
 points to remember:
 - focus on understanding on what data do we need to store first of all, then only go to building it, one field changes and you've to change your whole model.
+
+- Creating a model:
+1. get mongoose
+2. create a schema
+3. create a model which takes model and its schema and export.
+
+- Defining a schema:
+1. Direct way:
+{
+    username: String,
+    email: String,
+    password: String
+}
+
+2. Detailed way, more powerful, provides more functionalities, additional validation on data above controllers.
+{
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    }
+}
+
+- Defining timestamps in schema
+-- pass timestamp object after your data in  mongoose schema to get createdAt, updatedAt properties automatically.
